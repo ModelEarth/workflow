@@ -1,0 +1,53 @@
+# Local environment
+.DS_Store
+env/
+comfy.log
+*.log
+
+# Python artifacts (editor/ and root)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Node / frontend (editor/ builds)
+node_modules/
+.next/
+.nuxt/
+out/
+dist/
+
+# Editor build output
+editor/dist/
+editor/.next/
+
+# Model files — never commit large binaries
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.gguf
+*.onnx
+*.pkl
+
+# ComfyUI runtime dirs (if created in workflow root rather than inside submodule)
+models/
+input/
+output/
+custom_nodes/
+temp/
+user/
+
+# Secrets and env files
+.env
+.env.local
+docker/.env
+
+# Sparse-checkout markers
+.git/info/sparse-checkout

@@ -1,0 +1,21 @@
+[submodule "comfyui_frontend"]
+	path = comfyui_frontend
+	url = https://github.com/Comfy-Org/ComfyUI_frontend.git
+[submodule "comfyui"]
+	path = comfyui
+	url = https://github.com/Comfy-Org/ComfyUI.git
+[submodule "comfyui-manager"]
+	path = comfyui-manager
+	url = https://github.com/Comfy-Org/ComfyUI-Manager.git
+[submodule "comfy-cli"]
+	path = comfy-cli
+	url = https://github.com/Comfy-Org/comfy-cli.git
+[submodule "comfy_templates"]
+	path = comfy_templates
+	url = https://github.com/Comfy-Org/workflow_templates.git
+[submodule "comfyui-deploy"]
+	path = comfyui-deploy
+	url = https://github.com/BennyKok/comfyui-deploy.git
+[submodule "comfy-remote-nodes"]
+	path = comfy-remote-nodes
+	url = https://github.com/Comfy-Org/comfy-remote-nodes.git
