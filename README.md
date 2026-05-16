@@ -70,14 +70,12 @@ Serverless GPU deployment and workflow API infrastructure → [http://localhost:
 
 #### Clerk keys for comfyui-deploy
 
-Get both keys free at [dashboard.clerk.com](https://dashboard.clerk.com) → create an account → **Create application** → copy from **API Keys**:
+Get both keys free at [dashboard.clerk.com](https://dashboard.clerk.com) → create an account → **Create application** → **API Keys**. Add both to `docker/.env` in the webroot root:
 
-| Variable | Starts with | Where to copy from |
-|----------|------------|-------------------|
-| `CLERK_SECRET_KEY` | `sk_test_` or `sk_live_` | Secret keys section |
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | `pk_test_` or `pk_live_` | Publishable key section |
+- `CLERK_SECRET_KEY` — starts with `sk_test_` or `sk_live_` (Secret keys section)
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` — starts with `pk_test_` or `pk_live_` (Publishable key section)
 
-Add both to `docker/.env` in the webroot root. The `start chat` command checks for `CLERK_SECRET_KEY` before starting comfyui-deploy; without it the Next.js middleware crashes on startup.
+The `start chat` command checks for `CLERK_SECRET_KEY` before starting comfyui-deploy; without it the Next.js middleware crashes on startup.
 
 ### [comfy-cli](comfy-cli/) — CLI tool
 Install and manage ComfyUI from the terminal.
@@ -104,3 +102,6 @@ that ingests the Comfy submodules to guide stages of AI pipelines for image,
 video, and other automated content creation.
 
 See [AGENTS.md](AGENTS.md) for development guidance and constraints.
+
+[neilsonnn/image-blaster](https://github.com/neilsonnn/image-blaster)
+Creates 3D environments, SFX, and meshes from a single image using Claude skills, World Labs, and FAL.
