@@ -5,6 +5,17 @@ Original code will live in [editor/](editor/) — all submodule directories are 
 
 [Self-Hosting Comfy](https://claude.ai/share/9d1e0f23-9dd0-4b31-8908-1b9c88db012c) guidance provided by Claude.ai
 
+## Get keys for .env
+
+#### Clerk keys for comfyui-deploy
+
+Get both keys free at [dashboard.clerk.com](https://dashboard.clerk.com) → create an account → **Create application** → **Configure** → **API Keys**. Add both to `docker/.env` in the webroot root:
+
+- `CLERK_SECRET_KEY` — starts with `sk_test_` or `sk_live_` (Secret keys section)
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` — starts with `pk_test_` or `pk_live_` (Publishable key section)
+
+The `start chat` command checks for `CLERK_SECRET_KEY` before starting comfyui-deploy; without it the Next.js middleware crashes on startup.
+
 ## Local Servers
 
 | Service | URL |
@@ -67,15 +78,6 @@ Serverless GPU deployment and workflow API infrastructure → [http://localhost:
 - example_workflows/ — workflow JSON examples
 - comfy-nodes/ — deploy-specific custom nodes
 - web/ — Next.js dashboard (requires Clerk keys — see below)
-
-#### Clerk keys for comfyui-deploy
-
-Get both keys free at [dashboard.clerk.com](https://dashboard.clerk.com) → create an account → **Create application** → **API Keys**. Add both to `docker/.env` in the webroot root:
-
-- `CLERK_SECRET_KEY` — starts with `sk_test_` or `sk_live_` (Secret keys section)
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` — starts with `pk_test_` or `pk_live_` (Publishable key section)
-
-The `start chat` command checks for `CLERK_SECRET_KEY` before starting comfyui-deploy; without it the Next.js middleware crashes on startup.
 
 ### [comfy-cli](comfy-cli/) — CLI tool
 Install and manage ComfyUI from the terminal.
